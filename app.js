@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(require('method-override')());
 app.use(require('./routes'));
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to gnar test back-end." });
+});
+
+
 db.sequelize.sync();
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -22,12 +27,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 if (!isProduction) {
   app.use(errorhandler());
 }
-
-
-
-
-
-
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
