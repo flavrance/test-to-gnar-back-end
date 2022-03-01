@@ -26,6 +26,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 if (!isProduction) {
   app.use(errorhandler());
+  app.use(require('morgan')('combined'));
 }
 
 /// catch 404 and forward to error handler
@@ -66,3 +67,5 @@ app.use(function(err, req, res, next) {
 var server = app.listen( process.env.PORT || 3000, function(){  
   console.log('Listening on port ' + server.address().port);
 });
+
+module.exports = server;

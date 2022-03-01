@@ -76,7 +76,21 @@ exports.create = (req, res) => {
             }
             Task.create(childrenTask)
         });
-        res.send(data);
+        map.mappers.mapperOne(data).then((result) =>{
+            let item = {
+                message: 'Task successfully added!',
+                id: data.id,
+                title: data.title,
+                description: data.description,
+                status: data.status,
+                requester: data.requester,
+                owners: data.owners,
+                due_date: data.due_date,
+                taskId: data.taskId,
+                children: result                            
+            }; 
+            res.send(item);
+        });        
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the Tutorial."
