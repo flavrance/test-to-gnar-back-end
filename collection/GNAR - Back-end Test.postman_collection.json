@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "c49917f3-6590-4b4c-8b8e-61e82151dcb7",
+		"name": "GNAR - Back-end Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "FindAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/tasks?limit=4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						},
+						"description": "GET - Tasks?limit=0"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTask",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Task 2\",\r\n    \"description\": \"Test Task 2\",\r\n    \"status\": \"to_do\",\r\n    \"requester\": \"Flavio R.\",\r\n    \"owners\": \"Flavio R.\",\r\n    \"due_date\": \"2022-03-30\",\r\n    \"children\": [{\r\n        \"title\": \"Task 2.1\",\r\n        \"description\": \"Test Task 2.1\",\r\n        \"status\": \"to_do\",\r\n        \"requester\": \"Flavio R.\",\r\n        \"owners\": \"Flavio R.\",\r\n        \"due_date\": \"2022-03-30\" \r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/tasks/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "FindAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://agile-tundra-51369.herokuapp.com/api/tasks?limit=4",
+							"protocol": "https",
+							"host": [
+								"agile-tundra-51369",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://agile-tundra-51369.herokuapp.com/api/tasks/17",
+							"protocol": "https",
+							"host": [
+								"agile-tundra-51369",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTask",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Task 2\",\r\n    \"description\": \"Test Task 2\",\r\n    \"status\": \"to_do\",\r\n    \"requester\": \"Flavio R.\",\r\n    \"owners\": \"Flavio R.\",\r\n    \"due_date\": \"2022-03-30\",\r\n    \"children\": [{\r\n        \"title\": \"Task 2.1\",\r\n        \"description\": \"Test Task 2.1\",\r\n        \"status\": \"to_do\",\r\n        \"requester\": \"Flavio R.\",\r\n        \"owners\": \"Flavio R.\",\r\n        \"due_date\": \"2022-03-30\" \r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://agile-tundra-51369.herokuapp.com/api/tasks",
+							"protocol": "https",
+							"host": [
+								"agile-tundra-51369",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTask",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"doing\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://agile-tundra-51369.herokuapp.com/api/tasks/21/status",
+							"protocol": "https",
+							"host": [
+								"agile-tundra-51369",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"21",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
